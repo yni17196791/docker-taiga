@@ -4,8 +4,7 @@ A small Docker Image for the open-source project management software Taiga.io  -
 
 Tested / supported versions of Taiga:
 
-- Version 3.0.0
-- Version 3.1.0
+- Version 3.2.2
 
 ## Available Docker Images at DockerHub
 

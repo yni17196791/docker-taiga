@@ -6,7 +6,7 @@ DB_USER = os.getenv('TAIGA_DB_USER')
 DB_PASS = os.getenv('TAIGA_DB_PASSWORD')
 
 if os.getenv('TAIGA_BACKEND_DEBUG') is True:
-    print "dbname='" + DB_NAME + "' user='" + DB_USER + "' host='" + DB_HOST + "' password='" + DB_PASS + "'"
+    print("dbname='",DB_NAME,"' user='",DB_USER,"' host='",DB_HOST,"' password='",DB_PASS,"'")
 
 conn = psycopg2.connect("dbname='" + DB_NAME + "' user='" + DB_USER + "' host='" + DB_HOST + "' password='" + DB_PASS + "'")
 
