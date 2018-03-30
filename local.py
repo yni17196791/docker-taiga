@@ -6,10 +6,10 @@ from .original import *
 
 # Set configured database parameters
 DATABASES['default']['NAME'] = os.getenv('TAIGA_DB_NAME')
-DATABASES['default']['HOST'] = os.getenv('POSTGRES_PORT_5432_TCP_ADDR') or os.getenv('TAIGA_DB_HOST')
+DATABASES['default']['HOST'] = os.getenv('TAIGA_DB_HOST')
 DATABASES['default']['USER'] = os.getenv('TAIGA_DB_USER')
-DATABASES['default']['PASSWORD'] = os.getenv('POSTGRES_ENV_POSTGRES_PASSWORD') or os.getenv('TAIGA_DB_PASSWORD')
-DATABASES['default']['PORT'] = 5432
+DATABASES['default']['PASSWORD'] = os.getenv('TAIGA_DB_PASSWORD')
+DATABASES['default']['PORT'] = os.getenv('TAIGA_DB_PORT')
 
 # Configure hostname and URLs
 SITES['api']['domain'] = os.getenv('TAIGA_HOSTNAME')

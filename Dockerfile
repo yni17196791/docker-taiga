@@ -34,6 +34,7 @@ ENV TAIGA_SSL "false"
 ENV TAIGA_HOSTNAME "localhost"
 ENV TAIGA_SECRET_KEY "!!!PLEASE-REPLACE-ME!!!"
 ENV TAIGA_DB_HOST "localhost"
+ENV TAIGA_DB_HOST "5432"
 ENV TAIGA_DB_NAME "postgres"
 ENV TAIGA_DB_USER "postgres"
 ENV TAIGA_DB_PASSWORD "!!!PLEASE-REPLACE-ME!!!"
@@ -71,6 +72,9 @@ COPY entrypoint.sh /taiga.io/entrypoint.sh
 RUN mkdir /taiga.io/data
 
 # Startup
+EXPOSE 8000
+VOLUME "/taiga.io/taiga-back/media"
+
 WORKDIR /taiga.io/taiga-back
 ENTRYPOINT ["/taiga.io/entrypoint.sh"]
 CMD ["python", "manage.py", "runserver", "127.0.0.1:8000"]
