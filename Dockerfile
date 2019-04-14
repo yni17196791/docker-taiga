@@ -2,7 +2,7 @@ FROM python:3.6.4-alpine3.7
 MAINTAINER Thomas Fanninger <thomas@fanninger.at>
 
 # Define build arguments: Taiga version
-ARG VERSION=3.2.2
+ARG VERSION=4.2.1
 
 # Install necessary packages
 RUN apk update &&\
