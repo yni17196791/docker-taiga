@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3.6-alpine
 MAINTAINER Thomas Fanninger <thomas@fanninger.at>
 
 # Define build arguments: Taiga version
