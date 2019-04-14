@@ -1,5 +1,5 @@
 FROM python:3.6-alpine
-MAINTAINER Thomas Fanninger <thomas@fanninger.at>
+MAINTAINER m0wer <m0wer@autistici.org>
 
 # Define build arguments: Taiga version
 ARG VERSION=4.2.1

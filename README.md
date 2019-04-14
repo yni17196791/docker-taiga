@@ -10,14 +10,15 @@ since it was unmaintained.
 Tested / supported versions of Taiga:
 
 - Version 3.2.2
+- Version 4.2.1
 
 ## Available Docker Images at DockerHub
 
 Image Name  | Tag        | Taiga Version
 ------------|------------|---------------
-fanningert/docker-taiga | latest      | 3.2.2
+m0wer/taiga | latest      | 4.2.1
 
-See: https://hub.docker.com/r/fanningert/docker-taiga/
+See: <https://hub.docker.com/r/m0wer/taiga/>
 
 ## Image details
 
@@ -27,7 +28,7 @@ See: https://hub.docker.com/r/fanningert/docker-taiga/
 - The Nginx server instance accepts HTTP connections only (no HTTPS), but you can create an own image that enables HTTPS by adjusting the nginx.conf template.
 - PostgreSQL database server is not included, i.e. a db server instance is expected to be running elsewhere (either in a different container that is linked, or hosted somewhere else).
 - (Open-)LDAP server is not included.
-- The image is published on Dockerhub as `fanningert/docker-taiga`
+- The image is published on Dockerhub as `m0wer/taiga`
 
 Important environment parameters for configuration:
 - `TAIGA_HOSTNAME`: The name of the server/domain, through which the Taiga instance will be accessed in the end, e.g. `taiga.yourdomain.tld` (default: `localhost`).
