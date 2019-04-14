@@ -50,3 +50,7 @@ if os.getenv('LDAP_ENABLE').lower() == 'true':
     # Names of LDAP properties on user account to get email and full name
     LDAP_EMAIL_PROPERTY = os.getenv('LDAP_EMAIL_PROPERTY')
     LDAP_FULL_NAME_PROPERTY = os.getenv('LDAP_FULL_NAME_PROPERTY')
+
+# Enable or disable webhooks
+WEBHOOKS_ENABLED = (os.getenv('TAIGA_BACKEND_WEBHOOKS_ENABLED').lower() == 'true')
+WEBHOOKS_BLOCK_PRIVATE_ADDRESS = (os.getenv('TAIGA_BACKEND_WEBHOOKS_BLOCK_PRIVATE_ADDRESS').lower() == 'true')

@@ -1,6 +1,11 @@
 # taiga-docker
 
-A small Docker Image for the open-source project management software Taiga.io  - compressed image size is 120 MB. The recipe is based on the existing recipe by [benhutchins](https://github.com/benhutchins): see https://github.com/benhutchins/docker-taiga for his approach.
+A small Docker Image for the open-source project management software Taiga.io
+- compressed image size is 120 MB. The recipe is based on the existing recipe
+by [benhutchins](https://github.com/benhutchins): see
+<https://github.com/benhutchins/docker-taiga> for his approach. Then forked
+from [fanningert/docker-taiga](https://github.com/fanningert/docker-taiga)
+since it was unmaintained.
 
 Tested / supported versions of Taiga:
 
@@ -8,7 +13,7 @@ Tested / supported versions of Taiga:
 
 ## Available Docker Images at DockerHub
 
-Image Name  | Tag        | Taiga Version 
+Image Name  | Tag        | Taiga Version
 ------------|------------|---------------
 fanningert/docker-taiga | latest      | 3.2.2
 
@@ -16,7 +21,7 @@ See: https://hub.docker.com/r/fanningert/docker-taiga/
 
 ## Image details
 
-- The image contains Taiga backend and Taiga frontend. 
+- The image contains Taiga backend and Taiga frontend.
 - Frontend and backend are served by a Nginx server instance running on port 80.
 - LDAP plugin from https://github.com/ensky/taiga-contrib-ldap-auth is integrated and can be enabled if required.
 - The Nginx server instance accepts HTTP connections only (no HTTPS), but you can create an own image that enables HTTPS by adjusting the nginx.conf template.
@@ -47,6 +52,8 @@ Important environment parameters for configuration:
 - `LDAP_SEARCH_PROPERTY`: The property field to query for when looking up user accounts (default: `sAMAccountName`).
 - `LDAP_EMAIL_PROPERTY`: The property in which the email address of a user is stored (default: `mail`).
 - `LDAP_FULL_NAME_PROPERTY`: The property in which the full name of a user is stored (default: `displayName`).
+- `TAIGA_BACKEND_WEBHOOKS_ENABLED`: Activate webhooks (default: `false`).
+- `TAIGA_BACKEND_WEBHOOKS_BLOCK_PRIVATE_ADDRESS`: Disallow webhooks access to reserved and private address (default: `true`).
 
 Important directories inside of the image:
 - Backend distribution is located in `/taiga.io/taiga-back`
