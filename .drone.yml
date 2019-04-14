@@ -5,8 +5,7 @@ steps:
 - name: docker  
   image: plugins/docker
   settings:
-    username:
-      from_secret: docker_username
+    username: m0wer
     password:
       from_secret: docker_password
     repo: m0wer/docker-taiga
