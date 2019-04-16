@@ -16,7 +16,7 @@ Tested / supported versions of Taiga:
 
 Image Name  | Tag        | Taiga Version
 ------------|------------|---------------
-m0wer/taiga | latest      | 4.2.1
+m0wer/docker-taiga | latest      | 4.2.1
 
 See: <https://hub.docker.com/r/m0wer/docker-taiga/>
 
