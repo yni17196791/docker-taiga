@@ -13,12 +13,14 @@ Tested / supported versions of Taiga:
 - Version 4.2.1
 - Version 4.2.2
 - Version 4.2.3
+- Version 4.2.4
 
 ## Available Docker Images at DockerHub
 
 Image Name  | Tag        | Taiga Version
 ------------|------------|---------------
-m0wer/docker-taiga | latest      | 4.2.3
+m0wer/docker-taiga | latest      | 4.2.4
+m0wer/docker-taiga | v4.2.4      | 4.2.4
 m0wer/docker-taiga | v4.2.3      | 4.2.3
 m0wer/docker-taiga | v4.2.2      | 4.2.2
 m0wer/docker-taiga | v4.2.1      | 4.2.1
