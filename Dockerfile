@@ -1,12 +1,13 @@
 FROM python:3.6-alpine
-MAINTAINER m0wer <m0wer@autistici.org>
+MAINTAINER yni17196791 <yoshiki.niwa@gmail.com>
 
 # Define build arguments: Taiga version
 ARG VERSION=4.2.5
 
 # Install necessary packages
 RUN apk update &&\
-    apk add ca-certificates wget nginx git postgresql-dev musl-dev gcc jpeg-dev zlib-dev libxml2-dev libxslt-dev libffi-dev &&\
+    apk add ca-certificates wget nginx git postgresql-dev musl-dev gcc jpeg-dev zlib-dev libxml2-dev libxslt-dev libffi-dev python3-dev ce
+rtbot&&\
     update-ca-certificates
 
 # Download taiga.io backend and frontend
@@ -55,9 +56,11 @@ ENV LDAP_EMAIL_PROPERTY = 'mail'
 ENV LDAP_FULL_NAME_PROPERTY = 'displayName'
 ENV TAIGA_BACKEND_WEBHOOKS_ENABLED "false"
 ENV TAIGA_BACKEND_WEBHOOKS_BLOCK_PRIVATE_ADDRESS "true"
-
 RUN mkdir /taiga.io/presets
 COPY local.py /taiga.io/presets/local.py
+
+# Install Certification
+RUN certbot certonly --standalone -d bizcomjapan-taiga.tk -m yoshiki.niwa@bizcomjapan.co.jp --agree-tos -n
 
 # Setup Nginx
 COPY nginx.conf /etc/nginx/nginx.conf
@@ -76,7 +79,6 @@ RUN mkdir /taiga.io/data
 # Startup
 EXPOSE 8000
 VOLUME "/taiga.io/taiga-back/media"
-
 WORKDIR /taiga.io/taiga-back
 ENTRYPOINT ["/taiga.io/entrypoint.sh"]
 CMD ["python", "manage.py", "runserver", "127.0.0.1:8000"]
